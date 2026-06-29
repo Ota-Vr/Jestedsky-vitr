@@ -2,7 +2,8 @@ backend:
   name: github
   repo: ota-vr/Jestedsky-vitr
   branch: main
-  client_id: "Ov23liB7NFRE5PIqSJyu" # Sem vlož ten shluk písmen a čísel
+  auth_type: pkce
+  app_id: "Ov23liB7NFRE5PIqSJyu"
 
 media_folder: "images/web"
 public_folder: "images/web"
