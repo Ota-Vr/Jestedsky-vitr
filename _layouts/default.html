@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Ještědský vítr</title>
+    
+    <!-- Knihovna pro zvětšování fotek (Lightbox) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    
+    <style>
+        /* =========================================
+           1. ZÁKLADNÍ STYLY PRO CELÝ WEB
+           ========================================= */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
+        header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
+        .logo-container img { width: 420px; max-width: 90%; height: auto; transition: width 0.3s ease; }
+        nav { background: #1d3323; text-align: center; padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; }
+        nav ul li { margin: 0; }
+        nav ul li a { display: block; color: #f9f8f6; padding: 15px 25px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: all 0.3s ease; }
+        nav ul li a:hover, nav ul li a.active { background: #8f613c; color: #ffffff; }
+        .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
+        h2 { color: #1d3323; font-size: 2em; border-bottom: 2px solid #8f613c; padding-bottom: 10px; margin-top: 0; }
+        footer { background: #1d3323; color: #e2d7cd; text-align: center; padding: 25px; margin-top: 60px; font-size: 0.95em; border-top: 4px solid #8f613c; }
+        footer a { color: #f9f8f6 !important; text-decoration: underline; font-weight: bold; }
+        footer a:hover { color: #8f613c !important; }
+
+        /* MOBILNÍ MENU */
+        @media (max-width: 768px) {
+            nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; -ms-overflow-style: none; scrollbar-width: none; }
+            nav::-webkit-scrollbar { display: none; }
+            nav ul { display: flex; flex-direction: row; width: auto; }
+            nav ul li a { padding: 12px 16px; font-size: 0.95em; border-bottom: none; }
+        }
+
+        /* =========================================
+           2. SPECIFICKÉ STYLY PODSTRÁNEK
+           ========================================= */
+        
+        /* Úvodní stránka (index.html) */
+        .hero { background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/ciki_uvod_2.jpg') no-repeat center center/cover; color: white; text-align: center; padding: 80px 20px; }
+        .hero h2 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; border: none; }
+        .hero p { font-size: 1.2em; font-style: italic; margin-top: 10px; color: #e2d7cd; }
+        .welcome-section { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 4px solid #1d3323; }
+        .welcome-section h3 { color: #1d3323; font-size: 1.8em; margin-top: 0; }
+        .news-grid { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 30px; }
+        .news-card { flex: 1; min-width: 300px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e1df; }
+        .news-card img { width: 100%; height: 250px; object-fit: contain; background-color: #f0ede9; }
+        .news-content { padding: 20px; }
+        .news-date { color: #8f613c; font-weight: bold; font-size: 0.9em; }
+        .news-content h4 { margin: 5px 0 10px 0; color: #1d3323; font-size: 1.3em; }
+
+        /* Aktuality (aktuality.html) */
+        .post { background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 30px; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .post-date { color: #8f613c; font-weight: bold; font-size: 0.95em; display: block; margin-bottom: 5px; }
+        .post h3 { color: #1d3323; margin: 0 0 15px 0; font-size: 1.6em; }
+        .post img { width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
+        .post p { margin: 0 0 10px 0; font-size: 1.05em; }
+        .post-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-top: 20px; border-top: 1px solid #e2e1df; padding-top: 20px; }
+        .post-gallery a img { width: 100%; height: 90px; object-fit: cover; border-radius: 4px; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 0; }
+        .post-gallery a:hover img { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+
+        /* O nás (o-nas.html) */
+        .about-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+        .about-text { flex: 1.5; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+
+        /* Naši psi (nasi-psi.html) */
+        .dog-profile { display: flex; gap: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e1df; flex-wrap: wrap; margin-top: 30px; }
+        .dog-image { flex: 1; min-width: 280px; }
+        .dog-image img { width: 100%; height: auto; border-radius: 6px; }
+        .dog-details { flex: 1.5; min-width: 300px; }
+        .dog-details h3 { margin-top: 0; color: #1d3323; font-size: 1.8em; }
+        .specs-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .specs-table td { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .specs-table td:first-child { font-weight: bold; color: #8f613c; width: 35%; }
+
+        /* Štěňata (stenata.html) */
+        .info-box { background: #fff; border-left: 5px solid #8f613c; padding: 20px; margin-bottom: 40px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .vrh-detail { display: flex; gap: 35px; flex-wrap: wrap; margin-top: 30px; background: white; border: 1px solid #e2e1df; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .vrh-foto { flex: 1; min-width: 300px; }
+        .vrh-foto img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .vrh-info { flex: 1.5; min-width: 300px; }
+        .vrh-info h3 { color: #1d3323; margin-top: 0; font-size: 1.6em; }
+        .badge { background: #8f613c; color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.85em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        form { display: flex; flex-direction: column; max-width: 600px; margin: 40px auto 0 auto; background: white; padding: 35px; border-radius: 8px; border: 1px solid #e2e1df; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        form h3 { color: #1d3323; text-align: center; margin-top: 0; }
+        form label { margin-top: 15px; font-weight: 600; color: #1d3323; }
+        form input, form textarea, form button { padding: 12px; margin-top: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+        form input:focus, form textarea:focus { border-color: #8f613c; outline: none; }
+        form button { background: #1d3323; color: white; border: none; cursor: pointer; font-weight: bold; margin-top: 25px; transition: background 0.3s; }
+        form button:hover { background: #8f613c; }
+
+        /* Kontakt (kontakt.html) */
+        .contact-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        .contact-info { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; }
+        .contact-info h3 { color: #1d3323; margin-top: 0; }
+        .info-item { margin-bottom: 20px; }
+        .info-item strong { color: #8f613c; display: block; font-size: 1.1em; }
+        .contact-map { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; height: 350px; }
+    </style>
+</head>
+<body>
+
+    <!-- HLAVIČKA -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/web/logo.png" alt="Ještědský vítr Logo" style="cursor: pointer;">
+            </a>
+        </div>
+    </header>
+
+    <!-- JEDNOTNÉ MENU -->
+    <nav>
+        <ul>
+            <!-- Značky "active" v menu budeme později s Jekyllem řešit dynamicky, 
+                 zatím je můžeš nechat čisté. -->
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="aktuality.html">Aktuality</a></li>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="nasi-psi.html">Naši psi</a></li>
+            <li><a href="stenata.html">Štěňata (Vrhy)</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- MÍSTO PRO VKLÁDÁNÍ OBSAHU Z JINÝCH STRÁNEK -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- PATIČKA -->
+    <footer>
+        <p>&copy; 2026 Chovatelská stanice Ještědský vítr | Reg. č. 178/26</p>
+        <p style="font-size: 0.9em; margin-top: 10px; color: #a1bca7;">
+            Jsme hrdými členy <a href="https://www.kpchp.org/klub_obecne.php" target="_blank">Klubu přátel chodského psa (KPCHP)</a>
+        </p>
+    </footer>
+
+    <!-- Skript pro Lightbox (načte se všude automaticky) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" defer></script>
+</body>
+</html>

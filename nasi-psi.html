@@ -1,133 +1,44 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naši psi - Chovatelská stanice Ještědský vítr</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
-        header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
-        .logo-container img { 
-            width: 420px;       /* Zvětšíme základní šířku z 280px na 420px */
-            max-width: 90%;     /* Pojistka pro mobily: logo nikdy nepřeteče šířku displeje */
-            height: auto; 
-            transition: width 0.3s ease; /* Pěkný plynulý přechod při změně velikosti okna */
-        }
-        nav { background: #1d3323; text-align: center; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; }
-        nav ul li a { display: block; color: #f9f8f6; padding: 15px 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
-        nav ul li a:hover, nav ul li a.active { background: #8f613c; color: #ffffff; }
-        .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
-        h2 { color: #1d3323; font-size: 2em; border-bottom: 2px solid #8f613c; padding-bottom: 10px; }
-        .dog-profile { display: flex; gap: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e1df; flex-wrap: wrap; margin-top: 30px; }
-        .dog-image { flex: 1; min-width: 280px; }
-        .dog-image img { width: 100%; height: auto; border-radius: 6px; }
-        .dog-details { flex: 1.5; min-width: 300px; }
-        .dog-details h3 { margin-top: 0; color: #1d3323; font-size: 1.8em; }
-        .specs-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .specs-table td { padding: 10px 0; border-bottom: 1px solid #eee; }
-        .specs-table td:first-child { font-weight: bold; color: #8f613c; width: 35%; }
-        footer { background: #1d3323; color: #e2d7cd; text-align: center; padding: 25px; margin-top: 60px; font-size: 0.95em; border-top: 4px solid #8f613c; }
-        /* Tento řádek přebije tu ošklivou modrou a hodí odkaz do krásné světlé barvy */
-        footer a { color: #f9f8f6 !important; text-decoration: underline; font-weight: bold; }
-        footer a:hover { color: #8f613c !important; }
+---
+layout: default
+title: Naši psi
+---
 
-        @media (max-width: 768px) {
-            nav {
-                /* Povolí vodorovné posouvání prstem, pokud se položky nevejdou */
-                overflow-x: auto;
-                white-space: nowrap;
-                /* Schová ošklivý posuvník na telefonech, aby menu vypadalo čistě */
-                -webkit-overflow-scrolling: touch;
-            }
-            nav::-webkit-scrollbar {
-                display: none; /* Pro Chrome, Safari a Operu */
-            }
-            nav {
-                -ms-overflow-style: none;  /* Pro IE a Edge */
-                scrollbar-width: none;  /* Pro Firefox */
-            }
-            nav ul {
-                display: flex;
-                flex-direction: row; /* Položky zůstanou v řádku vedle sebe */
-                width: auto;
-            }
-            nav ul li a {
-                padding: 12px 16px; /* Menší mezery na mobilu, aby se tam vešlo co nejvíc slov */
-                font-size: 0.95em; /* Lehce menší písmo */
-                border-bottom: none; /* Smažeme ty svislé dělící linky */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- HLAVIČKA S ODKAZEM NA DOMOVSKOU STRÁNKU -->
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="images/web/logo.png" alt="Ještědský vítr Logo" style="cursor: pointer;">
+<div class="container">
+    <h2>Naše chovné feny</h2>
+    
+    <div class="dog-profile">
+        <div class="dog-image">
+            <img src="images/ciki/ciki_vrh.jpg" alt="Chodský pes Čiperka">
+        </div>
+        <div class="dog-details">
+            <h3>Čiperka</h3>
+            <p><em>Zakladatelka naší chovatelské stanice. Oficiálním registrovaným jménem v průkazu původu je sice Čiperka z Malého údolí, ale doma a v běžném životě jí neřekneme jinak než <strong>Čikita (Čiki)</strong>. Je to fenka s úžasným temperamentem, skvělou chutí do práce a nesmírně milou povahou k celé rodině.</em></p>
+            <table class="specs-table">
+                <tr>
+                    <td>Datum narození:</td>
+                    <td>17.04.2023</td>
+                </tr>
+                <tr>
+                    <td>Číslo zápisu:</td>
+                    <td>CMKU/CP/9416/23</td>
+                </tr>
+                <tr>
+                    <td>Zdravotní výsledky:</td>
+                    <td>DKK B, DM: G/G</td>
+                </tr>
+                <tr>
+                    <td>Svod & Bonitace:</td>
+                    <td>Chovná fena | Svod: A2, H1, K3, W2 | Bonitační kód: A2, K3, W2</td>
+                </tr>
+                <tr>
+                    <td>Výstavy & Zkoušky:</td>
+                    <td>Klubová/speciální výstava: V4 (Výborná 4) | 2025: FCI-BH/VT</td>
+                </tr>
+            </table>
+            
+            <a href="https://www.kpchp.org/pes.php?pes=9602" target="_blank" style="display: inline-block; margin-top: 20px; background: #8f613c; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 4px;">
+                Profil v databázi KPCHP ↗
             </a>
         </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Domů</a></li>
-            <li><a href="aktuality.html">Aktuality</a></li>
-            <li><a href="o-nas.html">O nás</a></li>
-            <li><a href="nasi-psi.html" class="active">Naši psi</a></li>
-            <li><a href="stenata.html">Štěňata (Vrhy)</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h2>Naše chovné feny</h2>
-        
-        <div class="dog-profile">
-            <div class="dog-image">
-                <img src="images/ciki/ciki_vrh.jpg" alt="Chodský pes Čiperka">
-            </div>
-            <div class="dog-details">
-                <h3>Čiperka</h3>
-                <p><em>Zakladatelka naší chovatelské stanice. Oficiálním registrovaným jménem v průkazu původu je sice Čiperka z Malého údolí, ale doma a v běžném životě jí neřekneme jinak než <strong>Čikita (Čiki)</strong>. Je to fenka s úžasným temperamentem, skvělou chutí do práce a nesmírně milou povahou k celé rodině.</em></p>
-                <table class="specs-table">
-                    <tr>
-                        <td>Datum narození:</td>
-                        <td>17.04.2023</td>
-                    </tr>
-                    <tr>
-                        <td>Číslo zápisu:</td>
-                        <td>CMKU/CP/9416/23</td>
-                    </tr>
-                    <tr>
-                        <td>Zdravotní výsledky:</td>
-                        <td>DKK B, DM: G/G</td>
-                    </tr>
-                    <tr>
-                        <td>Svod & Bonitace:</td>
-                        <td>Chovná fena | Svod: A2, H1, K3, W2 | Bonitační kód: A2, K3, W2</td>
-                    </tr>
-                    <tr>
-                        <td>Výstavy & Zkoušky:</td>
-                        <td>Klubová/speciální výstava: V4 (Výborná 4) | 2025: FCI-BH/VT</td>
-                    </tr>
-                </table>
-                
-                <a href="https://www.kpchp.org/pes.php?pes=9602" target="_blank" style="display: inline-block; margin-top: 20px; background: #8f613c; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 4px;">
-                    Profil v databázi KPCHP ↗
-                </a>
-            </div>
-        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Chovatelská stanice Ještědský vítr | Reg. č. 178/26</p>
-        <p style="font-size: 0.9em; margin-top: 10px; color: #a1bca7;">
-            Jsme hrdými členy <a href="https://www.kpchp.org/klub_obecne.php" target="_blank">Klubu přátel chodského psa (KPCHP)</a>
-        </p>
-    </footer>
-
-</body>
-</html>
+</div>

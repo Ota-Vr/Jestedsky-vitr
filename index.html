@@ -1,157 +1,44 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chovatelská stanice Ještědský vítr - Chodský pes</title>
-    <style>
-        /* Moderní CSS styly sladěné s logem */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
-        
-        header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
-        .logo-container img { 
-            width: 420px;       /* Zvětšíme základní šířku z 280px na 420px */
-            max-width: 90%;     /* Pojistka pro mobily: logo nikdy nepřeteče šířku displeje */
-            height: auto; 
-            transition: width 0.3s ease; /* Pěkný plynulý přechod při změně velikosti okna */
-        }
-        
-        nav { background: #1d3323; text-align: center; padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; }
-        nav ul li { margin: 0; }
-        nav ul li a { display: block; color: #f9f8f6; padding: 15px 25px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: all 0.3s ease; }
-        nav ul li a:hover, nav ul li a.active { background: #8f613c; color: #ffffff; }
-        
-        .hero { 
-    background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/ciki_uvod_2.jpg') no-repeat center center/cover; 
-    color: white; 
-    text-align: center; 
-    padding: 80px 20px; 
-}
-.hero h2 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; }
-.hero p { font-size: 1.2em; font-style: italic; margin-top: 10px; color: #e2d7cd; }
-        
-        .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
-        
-        .welcome-section { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 4px solid #1d3323; }
-        .welcome-section h3 { color: #1d3323; font-size: 1.8em; margin-top: 0; }
-        
-        .news-grid { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 30px; }
-        .news-card { flex: 1; min-width: 300px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e1df; }
-        .news-card img { 
-            width: 100%; 
-            height: 250px; /* Pevná výška pro všechny obrázky */
-            object-fit: contain; /* Obrázek se nezdeformuje a zobrazí se celý */
-            background-color: #f0ede9; /* Šedavé pozadí pro prázdná místa okolo certifikátu */
-        }
-        .news-content { padding: 20px; }
-        .news-date { color: #8f613c; font-weight: bold; font-size: 0.9em; }
-        .news-content h4 { margin: 5px 0 10px 0; color: #1d3323; font-size: 1.3em; }
-        
-        footer { background: #1d3323; color: #e2d7cd; text-align: center; padding: 25px; margin-top: 60px; font-size: 0.95em; border-top: 4px solid #8f613c; }
-        /* Tento řádek přebije tu ošklivou modrou a hodí odkaz do krásné světlé barvy */
-        footer a { color: #f9f8f6 !important; text-decoration: underline; font-weight: bold; }
-        footer a:hover { color: #8f613c !important; }
-        
-        @media (max-width: 768px) {
-            nav {
-                /* Povolí vodorovné posouvání prstem, pokud se položky nevejdou */
-                overflow-x: auto;
-                white-space: nowrap;
-                /* Schová ošklivý posuvník na telefonech, aby menu vypadalo čistě */
-                -webkit-overflow-scrolling: touch;
-            }
-            nav::-webkit-scrollbar {
-                display: none; /* Pro Chrome, Safari a Operu */
-            }
-            nav {
-                -ms-overflow-style: none;  /* Pro IE a Edge */
-                scrollbar-width: none;  /* Pro Firefox */
-            }
-            nav ul {
-                display: flex;
-                flex-direction: row; /* Položky zůstanou v řádku vedle sebe */
-                width: auto;
-            }
-            nav ul li a {
-                padding: 12px 16px; /* Menší mezery na mobilu, aby se tam vešlo co nejvíc slov */
-                font-size: 0.95em; /* Lehce menší písmo */
-                border-bottom: none; /* Smažeme ty svislé dělící linky */
-            }
-        }
-        
-    </style>
-</head>
-<body>
+---
+layout: default
+title: Domů
+---
 
-    <!-- HLAVIČKA S ODKAZEM NA DOMOVSKOU STRÁNKU -->
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="images/web/logo.png" alt="Ještědský vítr Logo" style="cursor: pointer;">
+<!-- ÚVODNÍ VELKÝ BANNER -->
+<div class="hero">
+    <h2>Chovatelská stanice Chodských psů</h2>
+    <p>„Chov s láskou pod vrcholem Ještědu“</p>
+</div>
+
+<div class="container">
+    
+    <!-- VÍTÁME VÁS -->
+    <section class="welcome-section">
+        <h3>Vítejte v Ještědském větru</h3>
+        <p>Jsme mezinárodně chráněná chovatelská stanice zapsaná pod registrem FCI. Naším cílem je odchovávat zdravá, povahově vyrovnaná štěňata s vynikajícími předpoklady pro práci, psí sporty i jako skvělé rodinné společníky.</p>
+        <p>Naše stanice sídlí v malebné obci Šimonovice. Chodský pes nás uchvátil svou věrností, inteligencí a typickým vzhledem českého národního plemene.</p>
+    </section>
+
+    <!-- SEKCE NEJNOVĚJŠÍ AKTUALITY NA HLAVNÍ STRÁNCE -->
+    <h3 style="color: #1d3323; font-size: 1.8em; margin-top: 50px; border-bottom: 2px solid #8f613c; padding-bottom: 10px;">Nejnovější aktualita</h3>
+
+    <div style="background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; gap: 30px; flex-wrap: wrap; align-items: center;">
+        
+        <!-- Tady je ta HLAVNÍ FOTKA, kterou budeš měnit -->
+        <div style="flex: 1; min-width: 280px;">
+            <img src="images/vrhy/Vrh_A/ciki_sono.jpg" alt="Hlavní fotka aktuality" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        </div>
+        
+        <!-- Tady je TEXT a TITULEK, který budeš přepisovat -->
+        <div style="flex: 1.5; min-width: 300px;">
+            <span style="color: #8f613c; font-weight: bold; font-size: 0.95em;">Červen 2026</span>
+            <h4 style="margin: 5px 0 15px 0; color: #1d3323; font-size: 1.8em;">Očekáváme Vrh A – Štěňátka jsou na cestě!</h4>
+<p style="font-size: 1.05em; margin-bottom: 20px;">Březost naší Čiperky byla oficiálně potvrzena! Otcem štěňátek se stane nádherný <strong>Baltazar Noční hlídka</strong>. Narození očekáváme během července...</p>
+            
+            <!-- Tlačítko, které uživatele pošle na celou stránku s historií -->
+            <a href="aktuality.html" style="display: inline-block; background: #1d3323; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s;">
+                Celý deníček štěňat & starší aktuality ↗
             </a>
         </div>
-    </header>
 
-    <!-- ROZUMNÉ A FUNKČNÍ MENU -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Domů</a></li>
-            <li><a href="aktuality.html">Aktuality</a></li>
-            <li><a href="o-nas.html">O nás</a></li>
-            <li><a href="nasi-psi.html">Naši psi</a></li>
-            <li><a href="stenata.html">Štěňata (Vrhy)</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <!-- ÚVODNÍ VELKÝ BANNER -->
-    <div class="hero">
-        <h2>Chovatelská stanice Chodských psů</h2>
-        <p>„Chov s láskou pod vrcholem Ještědu“</p>
     </div>
-
-    <div class="container">
-        
-        <!-- VÍTÁME VÁS -->
-        <section class="welcome-section">
-            <h3>Vítejte v Ještědském větru</h3>
-            <p>Jsme mezinárodně chráněná chovatelská stanice zapsaná pod registrem FCI. Naším cílem je odchovávat zdravá, povahově vyrovnaná štěňata s vynikajícími předpoklady pro práci, psí sporty i jako skvělé rodinné společníky.</p>
-            <p>Naše stanice sídlí v malebné obci Šimonovice. Chodský pes nás uchvátil svou věrností, inteligencí a typickým vzhledem českého národního plemene.</p>
-        </section>
-
-        <!-- SEKCE NEJNOVĚJŠÍ AKTUALITY NA HLAVNÍ STRÁNCE -->
-        <h3 style="color: #1d3323; font-size: 1.8em; margin-top: 50px; border-bottom: 2px solid #8f613c; padding-bottom: 10px;">Nejnovější aktualita</h3>
-
-        <div style="background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; gap: 30px; flex-wrap: wrap; align-items: center;">
-            
-            <!-- Tady je ta HLAVNÍ FOTKA, kterou budeš měnit -->
-            <div style="flex: 1; min-width: 280px;">
-                <img src="images/vrhy/Vrh_A/ciki_sono.jpg" alt="Hlavní fotka aktuality" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            </div>
-            
-            <!-- Tady je TEXT a TITULEK, který budeš přepisovat -->
-            <div style="flex: 1.5; min-width: 300px;">
-                <span style="color: #8f613c; font-weight: bold; font-size: 0.95em;">Červen 2026</span>
-                <h4 style="margin: 5px 0 15px 0; color: #1d3323; font-size: 1.8em;">Očekáváme Vrh A – Štěňátka jsou na cestě!</h4>
-<p style="font-size: 1.05em; margin-bottom: 20px;">Březost naší Čiperky byla oficiálně potvrzena! Otcem štěňátek se stane nádherný <strong>Baltazar Noční hlídka</strong>. Narození očekáváme během července...</p>
-                
-                <!-- Tlačítko, které uživatele pošle na celou stránku s historií -->
-                <a href="aktuality.html" style="display: inline-block; background: #1d3323; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s;">
-                    Celý deníček štěňat & starší aktuality ↗
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- PATIČKA -->
-    <footer>
-        <p>&copy; 2026 Chovatelská stanice Ještědský vítr | Reg. č. 178/26</p>
-        <p style="font-size: 0.9em; margin-top: 10px; color: #a1bca7;">
-            Jsme hrdými členy <a href="https://www.kpchp.org/klub_obecne.php" target="_blank">Klubu přátel chodského psa (KPCHP)</a>
-        </p>
-    </footer>
-
-</body>
-</html>
+</div>
