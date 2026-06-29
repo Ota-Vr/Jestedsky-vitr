@@ -6,10 +6,8 @@ title: Aktuality
 <div class="container">
     <h2>Dění v naší chovné stanici</h2>
 
-    <!-- TOTO JE MAGICKÁ SMYČKA: Vypíše automaticky vše ze složky _posts -->
     {% for post in site.posts %}
     <article class="post">
-        <!-- Vypíše datum ve formátu Den. Měsíc. Rok -->
         <span class="post-date">{{ post.date | date: "%d. %m. %Y" }}</span>
         
         <h3>{{ post.title }}</h3>
@@ -20,6 +18,19 @@ title: Aktuality
         
         <!-- Vypíše samotný text -->
         {{ post.content }}
+
+        <!-- Pokud jsi v administraci přidal fotky do galerie, vypíše je to do mřížky -->
+        {% if post.gallery %}
+        <div class="post-gallery">
+            {% for photo in post.gallery %}
+            <!-- data-lightbox="galerie-{{ post.slug }}" zaručí, že se fotky dají proklikat šipkami -->
+            <a href="{{ photo.image }}" data-lightbox="galerie-{{ post.slug }}">
+                <img src="{{ photo.image }}" alt="Fotografie v galerii">
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
     </article>
     {% endfor %}
 
