@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: ota-vr/Jestedsky-vitr # Tady systém ví, na jaký GitHub má zapisovat
+  branch: main
+
+media_folder: "images/web" # Výchozí složka, kam se budou nahrávat fotky z administrace
+public_folder: "images/web"
+
+collections:
+  - name: "aktuality"
+    label: "Aktuality (Deníček)"
+    folder: "_posts" # Zde se budou ukládat články
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Zaručí správný název souboru
+    fields:
+      - {label: "Layout (Neměnit)", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Nadpis aktuality", name: "title", widget: "string"}
+      - {label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Hlavní fotka", name: "image", widget: "image", required: false}
+      - {label: "Text", name: "body", widget: "markdown"}
