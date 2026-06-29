@@ -6,37 +6,21 @@ title: Aktuality
 <div class="container">
     <h2>Dění v naší chovné stanici</h2>
 
+    <!-- TOTO JE MAGICKÁ SMYČKA: Vypíše automaticky vše ze složky _posts -->
+    {% for post in site.posts %}
     <article class="post">
-        <span class="post-date">Červenec 2026</span>
-        <h3>Štěňátka jsou na světě! Vrh A je tu</h3>
+        <!-- Vypíše datum ve formátu Den. Měsíc. Rok -->
+        <span class="post-date">{{ post.date | date: "%d. %m. %Y" }}</span>
         
-        <img src="images/vrhy/Vrh_A/Akt_1/Akt_1_uvod.jpg" alt="Štěňátka po porodu">
+        <h3>{{ post.title }}</h3>
         
-        <p>Dnes v noci se Čiperce narodilo 6 úžasných a zdravých štěňátek (3 kluci a 3 holčičky). Všechna se mají čile k světu a maminka se o ně vzorně stará. Níže se můžete podívat na první fotky z pelíšku.</p>
+        {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+        {% endif %}
         
-        <div class="post-gallery">
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_1.jpg" data-lightbox="vrh-a_1" data-title="První hodiny na světě"><img src="images/vrhy/Vrh_A/Akt_1/stene_1.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_2.jpg" data-lightbox="vrh-a_1" data-title="Kluci u mámy"><img src="images/vrhy/Vrh_A/Akt_1/stene_2.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_3.jpg" data-lightbox="vrh-a_1" data-title="Detail štěňátka"><img src="images/vrhy/Vrh_A/Akt_1/stene_3.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_4.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_4.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_5.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_5.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_6.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_6.jpg" alt="Štěně"></a>
-            <a href="images/vrhy/Vrh_A/Akt_1/stene_7.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_7.jpg" alt="Štěně"></a>
-        </div>
+        <!-- Vypíše samotný text -->
+        {{ post.content }}
     </article>
+    {% endfor %}
 
-    <article class="post">
-        <span class="post-date">Červen 2026</span>
-        <h3>Očekáváme Vrh A – Štěňátka jsou na cestě!</h3>
-        <img src="images/vrhy/Vrh_A/ciki_sono.jpg" alt="Čiperka v trávě">
-        <p>Máme úžasnou zprávu, březost naší Čikity (Čiki) byla oficiálně potvrzena! Otcem štěňátek se stane nádherný Baltazar Noční hlídka.</p>
-        <p>Narození štěňátek očekáváme během <strong>července</strong> a odběr by měl probíhat v <strong>září 2026</strong>. Sledujte tuto stránku, budeme sem pravidelně přidávat fotky, jak štěňátka rostou...</p>
-    </article>
-
-    <article class="post">
-        <span class="post-date">Květen 2026</span>
-        <h3>Oficiálně uznaná chovná stanice</h3>
-        <img src="images/web/certifikat.jpg" alt="Certifikát FCI">
-        <p>Splnili jsme všechny podmínky a naše mezinárodně chráněná chovatelská stanice pod FCI byla úspěšně zaregistrována pod názvem <strong>Ještědský vítr</strong> (Reg. číslo 178/26). Naše chovatelská cesta oficiálně začíná!</p>
-    </article>
 </div>
