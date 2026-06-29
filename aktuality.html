@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" defer></script>
+    <title>Aktuality - Chovatelská stanice Ještědský vítr</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
+        header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
+        .logo-container img { 
+            width: 420px;       /* Zvětšíme základní šířku z 280px na 420px */
+            max-width: 90%;     /* Pojistka pro mobily: logo nikdy nepřeteče šířku displeje */
+            height: auto; 
+            transition: width 0.3s ease; /* Pěkný plynulý přechod při změně velikosti okna */
+        }
+        nav { background: #1d3323; text-align: center; padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; }
+        nav ul li a { display: block; color: #f9f8f6; padding: 15px 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        nav ul li a:hover, nav ul li a.active { background: #8f613c; color: #ffffff; }
+        
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        h2 { color: #1d3323; font-size: 2em; border-bottom: 2px solid #8f613c; padding-bottom: 10px; margin-top: 0; }
+        
+        /* Styl pro velkou přehlednou aktualitu */
+        .post { background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 30px; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .post-date { color: #8f613c; font-weight: bold; font-size: 0.95em; display: block; margin-bottom: 5px; }
+        .post h3 { color: #1d3323; margin: 0 0 15px 0; font-size: 1.6em; }
+        .post img { width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
+        .post p { margin: 0 0 10px 0; font-size: 1.05em; }
+        
+        footer { background: #1d3323; color: #e2d7cd; text-align: center; padding: 25px; margin-top: 60px; font-size: 0.95em; border-top: 4px solid #8f613c; }
+        footer a { color: #ffffff; text-decoration: underline; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            nav {
+                /* Povolí vodorovné posouvání prstem, pokud se položky nevejdou */
+                overflow-x: auto;
+                white-space: nowrap;
+                /* Schová ošklivý posuvník na telefonech, aby menu vypadalo čistě */
+                -webkit-overflow-scrolling: touch;
+            }
+            nav::-webkit-scrollbar {
+                display: none; /* Pro Chrome, Safari a Operu */
+            }
+            nav {
+                -ms-overflow-style: none;  /* Pro IE a Edge */
+                scrollbar-width: none;  /* Pro Firefox */
+            }
+            nav ul {
+                display: flex;
+                flex-direction: row; /* Položky zůstanou v řádku vedle sebe */
+                width: auto;
+            }
+            nav ul li a {
+                padding: 12px 16px; /* Menší mezery na mobilu, aby se tam vešlo co nejvíc slov */
+                font-size: 0.95em; /* Lehce menší písmo */
+                border-bottom: none; /* Smažeme ty svislé dělící linky */
+            }
+        }
+        /* Styly pro mřížku fotogalerie pod aktualitou */
+        .post-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+            border-top: 1px solid #e2e1df;
+            padding-top: 20px;
+        }
+        .post-gallery a img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover; /* Ořízne fotky do stejných obdélníčků */
+            border-radius: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .post-gallery a:hover img {
+            transform: scale(1.05); /* Jemný efekt vyskočení při najetí myší */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/web/logo.png" alt="Ještědský vítr Logo"></a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="aktuality.html" class="active">Aktuality</a></li>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="nasi-psi.html">Naši psi</a></li>
+            <li><a href="stenata.html">Štěňata (Vrhy)</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Dění v naší chovné stanici</h2>
+
+        <article class="post">
+            <span class="post-date">Červenec 2026</span>
+            <h3>Štěňátka jsou na světě! Vrh A je tu</h3>
+            
+            <img src="images/vrhy/Vrh_A/Akt_1/Akt_1_uvod.jpg" alt="Štěňátka po porodu">
+            
+            <p>Dnes v noci se Čiperce narodilo 6 úžasných a zdravých štěňátek (3 kluci a 3 holčičky). Všechna se mají čile k světu a maminka se o ně vzorně stará. Níže se můžete podívat na první fotky z pelíšku.</p>
+            
+            <div class="post-gallery">
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_1.jpg" data-lightbox="vrh-a_1" data-title="První hodiny na světě"><img src="images/vrhy/Vrh_A/Akt_1/stene_1.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_2.jpg" data-lightbox="vrh-a_1" data-title="Kluci u mámy"><img src="images/vrhy/Vrh_A/Akt_1/stene_2.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_3.jpg" data-lightbox="vrh-a_1" data-title="Detail štěňátka"><img src="images/vrhy/Vrh_A/Akt_1/stene_3.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_4.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_4.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_5.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_5.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_6.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_6.jpg" alt="Štěně"></a>
+                <a href="images/vrhy/Vrh_A/Akt_1/stene_7.jpg" data-lightbox="vrh-a_1"><img src="images/vrhy/Vrh_A/Akt_1/stene_7.jpg" alt="Štěně"></a>
+                
+            </div>
+        </article>
+
+        <!-- Tady budeš přidávat nové příspěvky navrch -->
+        <article class="post">
+            <span class="post-date">Červen 2026</span>
+            <h3>Očekáváme Vrh A – Štěňátka jsou na cestě!</h3>
+            <!-- Tady použijeme fotku ciki_5.jpg -->
+            <img src="images/vrhy/Vrh_A/ciki_sono.jpg" alt="Čiperka v trávě">
+            <p>Máme úžasnou zprávu, březost naší Čikity (Čiki) byla oficiálně potvrzena! Otcem štěňátek se stane nádherný Baltazar Noční hlídka.</p>
+            <p>Narození štěňátek očekáváme během <strong>července</strong> a odběr by měl probíhat v <strong>září 2026</strong>. Sledujte tuto stránku, budeme sem pravidelně přidávat fotky, jak štěňátka rostou...</p>
+        </article>
+
+        <article class="post">
+            <span class="post-date">Květen 2026</span>
+            <h3>Oficiálně uznaná chovná stanice</h3>
+            <img src="images/web/certifikat.jpg" alt="Certifikát FCI">
+            <p>Splnili jsme všechny podmínky a naše mezinárodně chráněná chovatelská stanice pod FCI byla úspěšně zaregistrována pod názvem <strong>Ještědský vítr</strong> (Reg. číslo 178/26). Naše chovatelská cesta oficiálně začíná!</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chovatelská stanice Ještědský vítr | <a href="https://www.kpchp.org/klub_obecne.php" target="_blank">KPCHP</a></p>
+    </footer>
+
+</body>
+</html>
