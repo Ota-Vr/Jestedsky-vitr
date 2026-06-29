@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: ota-vr/Jestedsky-vitr
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: "Ov23liB7NFRE5PIqSJyu"
 
 media_folder: "images/web"
 public_folder: "images/web"
