@@ -47,12 +47,23 @@
         footer a { color: #f9f8f6 !important; text-decoration: underline; font-weight: bold; }
         footer a:hover { color: #8f613c !important; }
 
-        /* MOBILNÍ MENU */
+        /* MOBILNÍ MENU A VZHLED (Aktivuje se jen na telefonech) */
         @media (max-width: 768px) {
             nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; -ms-overflow-style: none; scrollbar-width: none; }
             nav::-webkit-scrollbar { display: none; }
             nav ul { display: flex; flex-direction: row; width: auto; }
             nav ul li a { padding: 12px 16px; font-size: 0.95em; border-bottom: none; }
+            
+            /* Oprava přetékání boxů a textů na mobilu */
+            .dog-profile, .about-layout, .vrh-detail, .welcome-section, .post, form, .contact-info { 
+                padding: 15px; /* Zmenšíme obrovské okraje boxíků na mobilu */
+                gap: 20px; 
+            }
+            
+            /* Donutíme úplně všechny fotky a texty ignorovat 300px a lícovat přesně s mobilem */
+            .dog-details, .dog-image, .about-text, .about-image, .vrh-foto, .vrh-info, .contact-info, .contact-map, .news-card { 
+                min-width: 100%; 
+            }
         }
 
         /* =========================================
