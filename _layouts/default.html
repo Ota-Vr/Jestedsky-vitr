@@ -19,13 +19,23 @@
         nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; }
         nav ul li { margin: 0; }
         nav ul li a { display: block; color: #f9f8f6; padding: 15px 25px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: all 0.3s ease; }
-        nav ul li a:hover, nav ul li a.active { background: #8f613c; color: #ffffff; }
+        /* Jemnější efekt při pouhém najetí myší */
+        nav ul li a:hover { 
+            background: #8f613c; 
+            color: #ffffff; 
+        }
+
+        /* Velmi výrazný efekt pro stránku, na které zrovna jsme */
+        nav ul li a.active { 
+            background: #8f613c; 
+            color: #ffffff; 
+            box-shadow: inset 0 -4px 0 #f9f8f6; /* Přidá zespodu výraznou světlou linku */
+        }
         .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
         h2 { color: #1d3323; font-size: 2em; border-bottom: 2px solid #8f613c; padding-bottom: 10px; margin-top: 0; }
         footer { background: #1d3323; color: #e2d7cd; text-align: center; padding: 25px; margin-top: 60px; font-size: 0.95em; border-top: 4px solid #8f613c; }
         footer a { color: #f9f8f6 !important; text-decoration: underline; font-weight: bold; }
         footer a:hover { color: #8f613c !important; }
-        nav a.active { background-color: rgba(255, 255, 255, 0.15); /* Jemně bílé podbarvení */ border-radius: 4px; }
 
         /* MOBILNÍ MENU */
         @media (max-width: 768px) {
@@ -116,12 +126,14 @@
 
     <!-- JEDNOTNÉ MENU -->
     <nav>
-        <a href="index.html" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Domů</a>
-        <a href="aktuality.html" class="{% if page.url contains 'aktuality' %}active{% endif %}">Aktuality</a>
-        <a href="o-nas.html" class="{% if page.url contains 'o-nas' %}active{% endif %}">O nás</a>
-        <a href="nasi-psi.html" class="{% if page.url contains 'nasi-psi' %}active{% endif %}">Naši psi</a>
-        <a href="stenata.html" class="{% if page.url contains 'stenata' %}active{% endif %}">Štěňata (Vrhy)</a>
-        <a href="kontakt.html" class="{% if page.url contains 'kontakt' %}active{% endif %}">Kontakt</a>
+        <ul>
+            <li><a href="index.html" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Domů</a></li>
+            <li><a href="aktuality.html" class="{% if page.url contains 'aktuality' %}active{% endif %}">Aktuality</a></li>
+            <li><a href="o-nas.html" class="{% if page.url contains 'o-nas' %}active{% endif %}">O nás</a></li>
+            <li><a href="nasi-psi.html" class="{% if page.url contains 'nasi-psi' %}active{% endif %}">Naši psi</a></li>
+            <li><a href="stenata.html" class="{% if page.url contains 'stenata' %}active{% endif %}">Štěňata (Vrhy)</a></li>
+            <li><a href="kontakt.html" class="{% if page.url contains 'kontakt' %}active{% endif %}">Kontakt</a></li>
+        </ul>
     </nav>
 
     <!-- MÍSTO PRO VKLÁDÁNÍ OBSAHU Z JINÝCH STRÁNEK -->
