@@ -12,6 +12,16 @@
         /* =========================================
            1. ZÁKLADNÍ STYLY PRO CELÝ WEB
            ========================================= */
+        /* Zlaté pravidlo pro zalamování na mobilech */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Zlaté pravidlo pro fotky, aby nepřetékaly z obrazovky */
+        img {
+            max-width: 100%;
+            height: auto;
+        }   
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
         header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
         .logo-container img { width: 420px; max-width: 90%; height: auto; transition: width 0.3s ease; }
