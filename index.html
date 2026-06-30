@@ -18,27 +18,35 @@ title: Domů
         <p>Naše stanice sídlí v malebné obci Šimonovice. Chodský pes nás uchvátil svou věrností, inteligencí a typickým vzhledem českého národního plemene.</p>
     </section>
 
-    <!-- SEKCE NEJNOVĚJŠÍ AKTUALITY NA HLAVNÍ STRÁNCE -->
-    <h3 style="color: #1d3323; font-size: 1.8em; margin-top: 50px; border-bottom: 2px solid #8f613c; padding-bottom: 10px;">Nejnovější aktualita</h3>
-
-    <div style="background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); display: flex; gap: 30px; flex-wrap: wrap; align-items: center;">
-        
-        <!-- Tady je ta HLAVNÍ FOTKA, kterou budeš měnit -->
-        <div style="flex: 1; min-width: 280px;">
-            <img src="images/vrhy/Vrh_A/ciki_sono.jpg" alt="Hlavní fotka aktuality" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-        </div>
-        
-        <!-- Tady je TEXT a TITULEK, který budeš přepisovat -->
-        <div style="flex: 1.5; min-width: 300px;">
-            <span style="color: #8f613c; font-weight: bold; font-size: 0.95em;">Červen 2026</span>
-            <h4 style="margin: 5px 0 15px 0; color: #1d3323; font-size: 1.8em;">Očekáváme Vrh A – Štěňátka jsou na cestě!</h4>
-<p style="font-size: 1.05em; margin-bottom: 20px;">Březost naší Čiperky byla oficiálně potvrzena! Otcem štěňátek se stane nádherný <strong>Baltazar Noční hlídka</strong>. Narození očekáváme během července...</p>
+    <div class="container">
+        <h2>Nejnovější aktualita</h2>
+    
+        {% for post in site.posts limit:1 %}
+        <div style="background: white; border-radius: 8px; border: 1px solid #e2e1df; padding: 25px; display: flex; gap: 30px; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-top: 20px; flex-wrap: wrap;">
             
-            <!-- Tlačítko, které uživatele pošle na celou stránku s historií -->
-            <a href="aktuality.html" style="display: inline-block; background: #1d3323; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s;">
-                Celý deníček štěňat & starší aktuality ↗
-            </a>
+            {% if post.image %}
+            <div style="flex: 1; min-width: 280px;">
+                <img src="{{ post.image }}" alt="{{ post.title }}" style="width: 100%; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            </div>
+            {% endif %}
+    
+            <div style="flex: 2; min-width: 280px;">
+                <span style="color: #8f613c; font-weight: bold; font-size: 0.9em; text-transform: uppercase;">
+                    {{ post.date | date: "%d. %m. %Y" }}
+                </span>
+                
+                <h3 style="color: #1d3323; font-size: 1.8em; margin: 10px 0;">{{ post.title }}</h3>
+                
+                <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">
+                    {{ post.content | strip_html | truncatewords: 25 }}
+                </p>
+    
+                <a href="aktuality.html" style="background: #1d3323; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">
+                    Celý deníček štěňat & starší aktuality ↗
+                </a>
+            </div>
+            
         </div>
-
+        {% endfor %}
     </div>
 </div>

@@ -21,11 +21,10 @@ title: Aktuality
 
         <!-- Pokud jsi v administraci přidal fotky do galerie, vypíše je to do mřížky -->
         {% if post.gallery %}
-        <div class="post-gallery">
+        <div class="post-gallery" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
             {% for photo in post.gallery %}
-            <!-- data-lightbox="galerie-{{ post.slug }}" zaručí, že se fotky dají proklikat šipkami -->
-            <a href="{{ photo.image }}" data-lightbox="galerie-{{ post.slug }}">
-                <img src="{{ photo.image }}" alt="Fotografie v galerii">
+            <a href="{{ photo }}" data-lightbox="galerie-{{ post.slug }}">
+                <img src="{{ photo }}" alt="Fotografie v galerii" style="height: 120px; width: auto; object-fit: cover; border-radius: 4px; border: 1px solid #eee;">
             </a>
             {% endfor %}
         </div>
