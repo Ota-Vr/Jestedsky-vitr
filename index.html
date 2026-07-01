@@ -831,17 +831,15 @@ title: Domů
                     max-width: 100% !important;
                 }
                 
-                /* 2. Čistá bílá karta - VÝRAZNĚ ZMENŠENÉ VNITŘNÍ MEZERY (padding) */
+                /* 2. Čistá bílá karta */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper {
                     background-color: #ffffff !important;
                     border: 1px solid #e2e1df !important;
                     border-radius: 8px !important;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
-                    padding: 25px 30px 15px 30px !important; /* Nahoře jen 25px, dole jen 15px */
+                    padding: 25px 30px 15px 30px !important;
                     margin-top: 20px !important;
                 }
-              
-                /* Odstranění zbytečné vnitřní mezery, kterou si tam tajně přidává sám MailerLite */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
                     padding: 0 !important;
                 }
@@ -852,14 +850,14 @@ title: Domů
                     margin: 0 auto !important;
                 }
                 
-                /* 4. Vycentruje nadpis a textík a pořádně zmenší mezery kolem nich */
+                /* 4. Vycentruje nadpis a textík */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
                     max-width: 800px !important;
                     margin: 0 auto 15px auto !important;
                     text-align: center !important;
                 }
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4 {
-                    margin-bottom: 5px !important; /* Přitáhne text blíž k nadpisu */
+                    margin-bottom: 5px !important;
                 }
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
                     text-align: center !important;
@@ -874,7 +872,7 @@ title: Domů
                     margin-bottom: 10px !important;
                 }
                 
-                /* 6. Vycentruje ochranu proti robotům a zruší zbytečné místo pod ní */
+                /* 6. Vycentruje ochranu proti robotům */
                 #mlb2-43254963 .ml-form-recaptcha {
                     float: none !important;
                     display: flex !important;
@@ -883,36 +881,40 @@ title: Domů
                     margin-bottom: 0 !important;
                 }
 
-
-                /* --- OPRAVA PRO MOBILY (Přidat na konec před </style>) --- */
+                /* --- OPRAVA PRO MOBILY --- */
                 @media only screen and (max-width: 600px) {
-                    /* 1. Zruší vnucený řádek a poskládá políčko a tlačítko pod sebe */
-                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+                    /* Přepne strukturu formuláře hezky do sloupce pod sebe */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
                         display: flex !important;
                         flex-direction: column !important;
-                        padding-bottom: 0 !important;
                     }
                     
-                    /* 2. E-mailové políčko zabere 100 % šířky a udělá pod sebou mezeru */
-                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm .ml-form-fieldRow {
+                    /* Roztáhne e-mail na 100% a přidá mezeru pod něj */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-input-horizontal {
                         width: 100% !important;
+                        padding-right: 0 !important;
                         margin-bottom: 10px !important;
                     }
                     
-                    /* 3. Velké zelené tlačítko se roztáhne přes celou obrazovku pro snadné ťuknutí palcem */
-                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm button {
+                    /* Roztáhne hlavní tlačítko na 100% (snadné ťuknutí palcem) */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-button-horizontal {
                         width: 100% !important;
+                        display: block !important;
                     }
 
-                    /* 4. Elegantní zmenšení a zarovnání reCAPTCHA boxu, aby nepřetékal přes okraje */
+                    /* Skryje záložní tlačítko MailerLitu, ať tam nestraší dvě najednou */
+                    .ml-mobileButton-horizontal {
+                        display: none !important;
+                    }
+
+                    /* Zmenší a vycentruje reCAPTCHA box */
                     #mlb2-43254963 .ml-form-recaptcha {
                         transform: scale(0.85) !important;
                         transform-origin: center center !important;
                         margin-top: 15px !important;
                     }
                 }
-
-              </style>
+            </style>
         
 
     </div>
