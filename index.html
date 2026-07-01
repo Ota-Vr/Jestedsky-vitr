@@ -49,8 +49,6 @@ title: Domů
         </div>
         {% endfor %}
 
-            <!-- JEMNÝ OSTRŮVEK PRO DENÍČEK -->
-        <div style="background-color: #f7f9f7; border: 1px solid #e3ebe4; border-radius: 12px; padding: 40px 20px; max-width: 650px; margin: 60px auto 40px auto;">
                     
                     <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1782740");</style>
                 <style type="text/css">
@@ -802,8 +800,47 @@ title: Domů
                     <script>
                         fetch("https://assets.mailerlite.com/jsonp/2482755/forms/191781947337344737/takel")
                     </script>
-
-        </div>
+                    
+            <style>
+                /* 1. Roztáhne hlavní box na stejnou šířku jako ostatní články na webu */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+                    max-width: 100% !important;
+                }
+                
+                /* 2. Udělá z toho čistou bílou kartu (stejnou jako mají tvé články) */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper {
+                    background-color: #ffffff !important;
+                    border: 1px solid #e2e1df !important;
+                    border-radius: 8px !important;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
+                    padding: 40px 0 !important;
+                    margin-top: 20px !important;
+                }
+                
+                /* 3. Zabrání tomu, aby se samotná políčka roztáhla přes celou obrazovku, a vycentruje je */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+                    max-width: 400px !important;
+                    margin: 0 auto !important;
+                }
+                
+                /* 4. Vycentruje nadpis a textík */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
+                    max-width: 600px !important;
+                    margin: 0 auto 20px auto !important;
+                    text-align: center !important;
+                }
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
+                    text-align: center !important;
+                }
+                
+                /* 5. Vycentruje ochranu proti robotům (reCAPTCHA) */
+                #mlb2-43254963 .ml-form-recaptcha {
+                    float: none !important;
+                    display: flex !important;
+                    justify-content: center !important;
+                }
+              </style>
+        
 
     </div>
 </div>
