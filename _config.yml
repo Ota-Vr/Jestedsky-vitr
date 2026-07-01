@@ -1,0 +1,6 @@
+title: Ještědský vítr
+description: Chovatelská stanice chodských psů
+url: "https://jestedskyvitr.cz"
+
+plugins:
+  - jekyll-feed

@@ -6,6 +6,15 @@ title: Aktuality
 <div class="container">
     <h2>Dění v naší chovné stanici</h2>
 
+    <div style="background-color: #ffffff; border: 1px solid #e2e1df; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); padding: 20px 30px; width: 100%; box-sizing: border-box; margin: 0 0 30px 0; text-align: center;">
+        <h4 style="margin-top: 0; margin-bottom: 5px; color: #1d3323; font-size: 1.2em;">Chcete vědět o dalším článku jako první? 🐾</h4>
+        <p style="margin-top: 0; margin-bottom: 15px; color: #444;">Nechte nám svůj e-mail a my vám napíšeme, jakmile ho vydáme.</p>
+        
+        <a href="/#novinky" style="display: inline-block; background-color: #1d3323; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95em;">
+            Přejít k přihlášení na úvodní stránce ➔
+        </a>
+    </div>
+
     {% for post in site.posts %}
     <article class="post">
         <span class="post-date">{{ post.date | date: "%d. %m. %Y" }}</span>

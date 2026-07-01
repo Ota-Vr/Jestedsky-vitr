@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Ještědský vítr</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEJ41QYNS1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZEJ41QYNS1');
+    </script>
+
+    <meta property="og:title" content="{{ page.title }} | Ještědský vítr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jestedskyvitr.cz/" />
+    <meta property="og:image" content="https://jestedskyvitr.cz/images/web/logo_ctverec.png" />
+    <meta property="og:description" content="Chovatelská stanice chodských psů. Chov s láskou pod vrcholem Ještědu." />
+    <meta property="og:locale" content="cs_CZ" />
+
+    <!-- Odkaz na RSS feed pro automaty -->
+    {% feed_meta %}
     
     <!-- Knihovna pro zvětšování fotek (Lightbox) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -28,7 +48,12 @@
         img {
             max-width: 100%;
             height: auto;
-        }   
+        }  
+        
+        footer p { 
+            text-align: center; 
+            text-align-last: center; 
+        } 
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f8f6; color: #2d312e; }
         header { background: #ffffff; text-align: center; padding: 25px 20px; border-bottom: 3px solid #8f613c; }
         .logo-container img { width: 420px; max-width: 90%; height: auto; transition: width 0.3s ease; }
@@ -80,14 +105,66 @@
             }
         }
 
+        /* Tlačítko pro Instagram s fotkou */
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Typický IG přechod */
+            color: white !important;
+            padding: 8px 20px 8px 8px; /* Menší mezera vlevo kvůli fotce */
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .instagram-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+        }
+        .instagram-btn img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Udělá z fotky kolečko */
+            margin-right: 15px;
+            border: 2px solid white;
+            object-fit: cover;
+        }
+
         /* =========================================
            2. SPECIFICKÉ STYLY PODSTRÁNEK
            ========================================= */
         
         /* Úvodní stránka (index.html) */
-        .hero { background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/foto_uvod_3.jpg') no-repeat center center/cover; color: white; text-align: center; padding: 80px 20px; }
-        .hero h2 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; border: none; color: white; }
-        .hero p { font-size: 1.2em; font-style: italic; margin-top: 10px; color: #e2d7cd; }
+        .hero { 
+            background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/foto_uvod_3.png') no-repeat center center/cover; 
+            color: white; 
+            text-align: center; 
+            /* Zvětšení banneru a uzamčení textů na střed */
+            min-height: 450px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 40px 20px; 
+        }
+        .hero h2 { 
+            margin: 0; 
+            font-size: 2.5em; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            border: none; 
+            color: white; 
+            text-align: center;
+        }
+        .hero p { 
+            font-size: 1.2em; 
+            font-style: italic; 
+            margin: 15px auto 0 auto; /* Vycentruje blok textu */
+            color: #e2d7cd; 
+            text-align: center; /* Vycentruje samotná písmena */
+            max-width: 800px; /* Zabrání roztažení textu do jedné ošklivé dlouhé řádky na velkých TV/monitorech */
+        }
         .welcome-section { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 4px solid #1d3323; }
         .welcome-section h3 { color: #1d3323; font-size: 1.8em; margin-top: 0; }
         .news-grid { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 30px; }
@@ -131,21 +208,27 @@
         .vrh-info { flex: 1.5; min-width: 300px; }
         .vrh-info h3 { color: #1d3323; margin-top: 0; font-size: 1.6em; }
         .badge { background: #8f613c; color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.85em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        form { display: flex; flex-direction: column; max-width: 600px; margin: 40px auto 0 auto; background: white; padding: 35px; border-radius: 8px; border: 1px solid #e2e1df; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        form { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; margin: 40px 0 0 0; background: white; padding: 40px 30px; border-radius: 8px; border: 1px solid #e2e1df; box-shadow: 0 4px 15px rgba(0,0,0,0.03); align-items: center; }
+        form > * { width: 100%; max-width: 600px; }
         form h3 { color: #1d3323; text-align: center; margin-top: 0; }
-        form label { margin-top: 15px; font-weight: 600; color: #1d3323; }
-        form input, form textarea, form button { padding: 12px; margin-top: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+        form label { margin-top: 15px; font-weight: 600; color: #1d3323; text-align: left; }
+        form input, form textarea, form button { padding: 12px; margin-top: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; box-sizing: border-box; }
         form input:focus, form textarea:focus { border-color: #8f613c; outline: none; }
         form button { background: #1d3323; color: white; border: none; cursor: pointer; font-weight: bold; margin-top: 25px; transition: background 0.3s; }
         form button:hover { background: #8f613c; }
 
         /* Kontakt (kontakt.html) */
-        .contact-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        /* Přidáno align-items: stretch; aby se sloupce natáhly na stejnou výšku */
+        .contact-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; align-items: stretch; }
+        
         .contact-info { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; }
         .contact-info h3 { color: #1d3323; margin-top: 0; }
         .info-item { margin-bottom: 20px; }
         .info-item strong { color: #8f613c; display: block; font-size: 1.1em; }
-        .contact-map { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; height: 350px; }
+        
+        /* Mapě jsme smazali pevnou height, dali jí display flex a zajistili, aby její vnitřek (iframe) vyplnil celý prostor */
+        .contact-map { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; display: flex; }
+        .contact-map iframe { width: 100% !important; height: 100% !important; min-height: 350px; border: none; flex-grow: 1; }
     </style>
 </head>
 <body>
@@ -177,12 +260,14 @@
     </main>
 
     <!-- PATIČKA -->
-    <footer>
+    <footer>       
         <p>&copy; 2026 Chovatelská stanice Ještědský vítr | Reg. č. 178/26</p>
         <p style="font-size: 0.9em; margin-top: 10px; color: #a1bca7;">
             Jsme hrdými členy <a href="https://www.kpchp.org/klub_obecne.php" target="_blank">Klubu přátel chodského psa (KPCHP)</a>
         </p>
     </footer>
+
+    
 
     <!-- Skript pro Lightbox (načte se všude automaticky) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" defer></script>
