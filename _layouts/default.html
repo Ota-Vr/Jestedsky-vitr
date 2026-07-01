@@ -11,6 +11,9 @@
     <meta property="og:image" content="https://jestedskyvitr.cz/images/web/foto_uvod_3.jpg" />
     <meta property="og:description" content="Chovatelská stanice chodských psů. Chov s láskou pod vrcholem Ještědu." />
     <meta property="og:locale" content="cs_CZ" />
+
+    <!-- Odkaz na RSS feed pro automaty -->
+    {% feed_meta %}
     
     <!-- Knihovna pro zvětšování fotek (Lightbox) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -124,7 +127,7 @@
         
         /* Úvodní stránka (index.html) */
         .hero { 
-            background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/foto_uvod_3.jpg') no-repeat center center/cover; 
+            background: linear-gradient(rgba(29, 51, 35, 0.7), rgba(29, 51, 35, 0.7)), url('images/web/foto_uvod_3.png') no-repeat center center/cover; 
             color: white; 
             text-align: center; 
             /* Zvětšení banneru a uzamčení textů na střed */
