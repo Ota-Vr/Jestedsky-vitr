@@ -218,12 +218,17 @@
         form button:hover { background: #8f613c; }
 
         /* Kontakt (kontakt.html) */
-        .contact-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        /* Přidáno align-items: stretch; aby se sloupce natáhly na stejnou výšku */
+        .contact-layout { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; align-items: stretch; }
+        
         .contact-info { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; }
         .contact-info h3 { color: #1d3323; margin-top: 0; }
         .info-item { margin-bottom: 20px; }
         .info-item strong { color: #8f613c; display: block; font-size: 1.1em; }
-        .contact-map { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; height: 350px; }
+        
+        /* Mapě jsme smazali pevnou height, dali jí display flex a zajistili, aby její vnitřek (iframe) vyplnil celý prostor */
+        .contact-map { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e1df; display: flex; }
+        .contact-map iframe { width: 100% !important; height: 100% !important; min-height: 350px; border: none; flex-grow: 1; }
     </style>
 </head>
 <body>
