@@ -882,6 +882,36 @@ title: Domů
                     margin-top: 5px !important;
                     margin-bottom: 0 !important;
                 }
+
+
+                /* --- OPRAVA PRO MOBILY (Přidat na konec před </style>) --- */
+                @media only screen and (max-width: 600px) {
+                    /* 1. Zruší vnucený řádek a poskládá políčko a tlačítko pod sebe */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+                        display: flex !important;
+                        flex-direction: column !important;
+                        padding-bottom: 0 !important;
+                    }
+                    
+                    /* 2. E-mailové políčko zabere 100 % šířky a udělá pod sebou mezeru */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm .ml-form-fieldRow {
+                        width: 100% !important;
+                        margin-bottom: 10px !important;
+                    }
+                    
+                    /* 3. Velké zelené tlačítko se roztáhne přes celou obrazovku pro snadné ťuknutí palcem */
+                    #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm button {
+                        width: 100% !important;
+                    }
+
+                    /* 4. Elegantní zmenšení a zarovnání reCAPTCHA boxu, aby nepřetékal přes okraje */
+                    #mlb2-43254963 .ml-form-recaptcha {
+                        transform: scale(0.85) !important;
+                        transform-origin: center center !important;
+                        margin-top: 15px !important;
+                    }
+                }
+
               </style>
         
 
