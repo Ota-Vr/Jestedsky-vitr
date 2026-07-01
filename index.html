@@ -680,172 +680,10 @@ title: Domů
           }
         }
       </style>
-        
-        
-    
-        
-        
-    
-        
-        
-    
-        
-    
-          
-            
-            
-          
-    
-          
-            
-            
-          
-    
-          
-    
-                
-                
-                
-                
-                
-                
-          
-    
-          
-    
-          
-            
-            
-             
-            
-            
-          
-    
-            
-            
-            
-            
-            
-            
-          
-    
-           
-    
-            
-            
-            
-            
-            
-            
-            
-           
-    
-    
-          
-            
-            
-            
-            
-      
-    
-    
-    
-      
-            
-            
-            
-          
-    
-    
-          
-        
-        
-        
-        
-        
-        
-        
-      
-    
-      
-            
-            
-            
-            
-            
-          
-    
-          
-            
-            
-            
-            
-            
-          
-    
-          
-            
-            
-            
-            
-            
-          
-    
-           
-    
-            
-            
-            
-            
-           
-    
-           
-            
-            
-            
-            
-          
-    
-          
-            
-            
-            
-            
-            
-            
-            
-           
-    
-        
-    
-        
-    
-    
-          
-    
-    
-          
-    
-          
-          
-    
-          
-    
-          
-    
-    
-    
-    
-    
-        
-    
           
         <div id="mlb2-43254963" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-43254963">
           <div class="ml-form-align-center ">
             <div class="ml-form-embedWrapper embedForm">
-    
-              
-              
     
               <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
     
@@ -866,25 +704,17 @@ title: Domů
                           
                           <div style="width: 100%;" class="horizontal-fields">
     
-    
-    
-    
-    
-    
                             <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                               
                               <!-- input -->
                           <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Váš e-mail..." autocomplete="email">
                           <!-- /input -->
                             </div>
-    
-    
-    
+
                           </div>
                         
                       </div>
-    
-    
+  
                       <div class="ml-button-horizontal primary ">
                         
                           <button type="submit" class="primary">Chci dostávat novinky</button>
@@ -900,10 +730,6 @@ title: Domů
                   <!-- Privacy policy -->
                   
                   <!-- /Privacy policy -->
-    
-                  
-    
-                  
     
                   <div class="ml-form-checkboxRow ml-validate-required">
                     
@@ -999,45 +825,63 @@ title: Domů
 
             <!-- VYLEPŠENÍ VZHLEDU FORMULÁŘE (Široký design) -->
             <style>
-                /* 1. Roztáhne hlavní box na stejnou šířku jako ostatní články na webu */
+                /* 1. Roztáhne hlavní box na správnou šířku */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
                     max-width: 100% !important;
                 }
                 
-                /* 2. Udělá z toho čistou bílou kartu s bočním odsazením */
+                /* 2. Čistá bílá karta - VÝRAZNĚ ZMENŠENÉ VNITŘNÍ MEZERY (padding) */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper {
                     background-color: #ffffff !important;
                     border: 1px solid #e2e1df !important;
                     border-radius: 8px !important;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
-                    padding: 40px 30px !important; /* Přidány boční mezery */
+                    padding: 25px 30px 15px 30px !important; /* Nahoře jen 25px, dole jen 15px */
                     margin-top: 20px !important;
                 }
+              
+                /* Odstranění zbytečné vnitřní mezery, kterou si tam tajně přidává sám MailerLite */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
+                    padding: 0 !important;
+                }
                 
-                /* 3. Dovolí vnitřku formuláře roztáhnout se pěkně do šířky (Tohle tě brzdilo!) */
+                /* 3. Dovolí vnitřku formuláře roztáhnout se pěkně do šířky */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
-                    max-width: 800px !important; /* Zvětšeno z 400px na 800px */
+                    max-width: 800px !important;
                     margin: 0 auto !important;
                 }
                 
-                /* 4. Vycentruje nadpis a textík */
+                /* 4. Vycentruje nadpis a textík a pořádně zmenší mezery kolem nich */
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
                     max-width: 800px !important;
-                    margin: 0 auto 20px auto !important;
+                    margin: 0 auto 15px auto !important;
                     text-align: center !important;
+                }
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4 {
+                    margin-bottom: 5px !important; /* Přitáhne text blíž k nadpisu */
                 }
                 #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
                     text-align: center !important;
+                    margin-bottom: 0 !important;
+                }
+              
+                /* 5. Přitáhne zaškrtávací políčko a e-mail více k sobě */
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+                    padding-bottom: 10px !important;
+                }
+                #mlb2-43254963.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+                    margin-bottom: 10px !important;
                 }
                 
-                /* 5. Vycentruje ochranu proti robotům a přidá jí místo nahoře */
+                /* 6. Vycentruje ochranu proti robotům a zruší zbytečné místo pod ní */
                 #mlb2-43254963 .ml-form-recaptcha {
                     float: none !important;
                     display: flex !important;
                     justify-content: center !important;
-                    margin-top: 15px !important;
+                    margin-top: 5px !important;
+                    margin-bottom: 0 !important;
                 }
-            </style>
+              </style>
         
 
     </div>
