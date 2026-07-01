@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Ještědský vítr</title>
+
+    <meta property="og:title" content="{{ page.title }} | Ještědský vítr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jestedskyvitr.cz/" />
+    <meta property="og:image" content="https://jestedskyvitr.cz/images/web/foto_uvod_3.jpg" />
+    <meta property="og:description" content="Chovatelská stanice chodských psů. Chov s láskou pod vrcholem Ještědu." />
+    <meta property="og:locale" content="cs_CZ" />
     
     <!-- Knihovna pro zvětšování fotek (Lightbox) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
@@ -78,6 +85,32 @@
             .post, form, .welcome-section {
                 padding: 15px;
             }
+        }
+
+        /* Tlačítko pro Instagram s fotkou */
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Typický IG přechod */
+            color: white !important;
+            padding: 8px 20px 8px 8px; /* Menší mezera vlevo kvůli fotce */
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .instagram-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+        }
+        .instagram-btn img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Udělá z fotky kolečko */
+            margin-right: 15px;
+            border: 2px solid white;
+            object-fit: cover;
         }
 
         /* =========================================
