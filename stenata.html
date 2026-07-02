@@ -69,20 +69,29 @@ title: Štěňata (Vrhy)
     <form action="https://formspree.io/f/mwvdbaro" method="POST">
 
         <h3>Dotazník pro zájemce o štěňátko</h3>
-        <p style="text-align: center; font-size: 0.9em; color: #666; margin: 0;">Máte-li zájem o štěně z naší stanice, vyplňte prosím tento formulář. Pomůže nám to vybrat pro vás toho nejvhodnějšího parťáka.</p>
+        <p style="text-align: center; font-size: 0.9em; color: #666; margin: 0; margin-bottom: 20px;">Hledáte nového člena rodiny? Vyplňte nám tento psí dotazník, ať víme, do jaké smečky by náš choďák šel.</p>
         
-        <label for="name">Jméno a příjmení:</label>
-        <input type="text" id="name" name="name" placeholder="Jan Novák" required>
+        <label for="name">Budoucí páníček nebo panička (Jméno):</label>
+        <input type="text" id="name" name="name" placeholder="Např. Jan Novák" required>
 
-        <label for="email">E-mailová adresa:</label>
+        <label for="email">Na jaký e-mail se vám můžeme ozvat?</label>
         <input type="email" id="email" name="email" placeholder="jan.novak@email.cz" required>
 
-        <label for="phone">Telefonní číslo:</label>
+        <label for="phone">Telefonní číslo (pro rychlejší domluvu):</label>
         <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789">
 
-        <label for="about">Povězte nám něco o sobě:</label>
-        <textarea id="about" name="about" rows="4" placeholder="Kde bydlíte, jaké máte zkušenosti se psy, co s pejskem plánujete (rodinný parťák, sport, výstavy)..." required></textarea>
+        <!-- POLÍČKO S VÝBĚREM POHLAVÍ -->
+        <label for="gender">Koho přesně do smečky hledáte?</label>
+        <select id="gender" name="gender" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1em; box-sizing: border-box;">
+            <option value="" disabled selected>Vyberte vysněného parťáka...</option>
+            <option value="Pes">Psího kluka (pes)</option>
+            <option value="Fena">Psí princeznu (fena)</option>
+            <option value="Záleží na povaze">Je mi to fuk, hlavně ať je to choďák!</option>
+        </select>
 
-        <button type="submit">Odeslat nezávaznou poptávku</button>
+        <label for="about">Tlapku na srdce: kam by štěňátko šlo?</label>
+        <textarea id="about" name="about" rows="4" placeholder="Napište nám, kde bydlíte, jaké máte zkušenosti se psy a co s parťákem plánujete (gaučing, výlety, sport, výstavy)..." required></textarea>
+
+        <button type="submit">Odeslat do Ještědského větru</button>
     </form>
 </div>
