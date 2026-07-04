@@ -2,7 +2,7 @@
 layout: default
 title: Náš první dogtrekking
 date: 2026-05-10
-image: images/web/20240409_160655_o.jpg
+image: images/web/20240409_160655_c.jpg
 ---
 Pojizeřím za sluncem 2024
 
