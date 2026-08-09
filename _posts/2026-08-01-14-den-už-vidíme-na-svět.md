@@ -2,11 +2,10 @@
 layout: default
 title: 14. den - už vidíme na svět
 date: 2026-08-02
-image: ""
+image: images/web/20260802_170230.jpg
 gallery:
   - images/web/20260802_165603.jpg
   - images/web/20260802_094458.jpg
-  - images/web/20260802_170230.jpg
 ---
 Oznamujeme všem, že už na vás vidíme :) - včera to začalo a postupně všichni už koukají.
 
