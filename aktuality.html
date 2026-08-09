@@ -13,7 +13,8 @@ title: Aktuality
         <h3>{{ post.title }}</h3>
         
         {% if post.image %}
-        <img src="{{ post.image }}" alt="{{ post.title }}">
+        <!-- Zde je upravený hlavní obrázek aktualit -->
+        <img src="{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: 400px; object-fit: contain; background-color: #f4f4f4; border-radius: 8px; margin-bottom: 20px;">
         {% endif %}
         
         <!-- Vypíše samotný text -->
