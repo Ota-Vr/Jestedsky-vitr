@@ -3,6 +3,43 @@ layout: default
 title: Štěňata (Vrhy)
 ---
 
+<style>
+/* Základní mřížka pro mobily (1 štěně na řádek) */
+.puppies-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center; /* Vycentruje kartičky */
+}
+
+/* Pro větší telefony a tablety (2 štěňata na řádek) */
+@media (min-width: 550px) {
+    .puppies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pro počítače (3 štěňata na řádek) */
+@media (min-width: 900px) {
+    .puppies-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Jednotný vzhled kartičky */
+.puppy-card {
+    background: #fdfcfb;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    width: 100%;
+    max-width: 280px; 
+    box-sizing: border-box;
+}
+</style>
+
 <div class="container">
     <h2>Informace pro zájemce o štěňata</h2>
     <div class="info-box">
@@ -65,57 +102,50 @@ title: Štěňata (Vrhy)
         <div style="margin-top: 40px; border-top: 2px dashed #e2e1df; padding-top: 30px;">
             <h3 style="color: #1d3323; font-size: 1.8em; text-align: center; margin-bottom: 20px;">Představujeme naše štěňátka</h3>
             
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <!-- Zde je použita nová mřížka pro responzivní chování -->
+            <div class="puppies-grid">
                 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 1 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Aranka.jpeg" alt="Štěně 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #3cb366; font-size: 1.3em; -webkit-text-stroke: 1px black;">Aranka</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Aranka.jpeg" alt="Aranka" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #3cb366; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Aranka</strong>
                     <span style="color: #555; font-size: 0.9em;">Fenka (Holka)</span>
                 </div>
 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 2 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Akhiro.jpeg" alt="Štěně 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #2217be; font-size: 1.3em; -webkit-text-stroke: 1px black;">Akhiro</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Akhiro.jpeg" alt="Akhiro" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #2217be; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Akhiro</strong>
                     <span style="color: #555; font-size: 0.9em;">Pejsek (Kluk)</span>
                 </div>
 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 3 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Aira.jpeg" alt="Štěně 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #cdd62c; font-size: 1.3em; -webkit-text-stroke: 1px black;">Aira</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Aira.jpeg" alt="Aira" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #cdf507; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Aira</strong>
                     <span style="color: #555; font-size: 0.9em;">Fenka (Holka)</span>
                 </div>
 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 4 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Ambra.jpeg" alt="Štěně 4" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #cb1a1a; font-size: 1.3em; -webkit-text-stroke: 1px black;">Ambra</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Ambra.jpeg" alt="Ambra" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #cb1a1a; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Ambra</strong>
                     <span style="color: #555; font-size: 0.9em;">Fenka (Holka)</span>
                 </div>
 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 5 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Apollo.jpeg" alt="Štěně 5" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #f2f5f7; font-size: 1.3em; -webkit-text-stroke: 1px black;">Apollo</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Apollo.jpeg" alt="Apollo" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #f2f5f7; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Apollo</strong>
                     <span style="color: #555; font-size: 0.9em;">Pejsek (Kluk)</span>
                 </div>
 
                 <!-- KARTIČKA ŠTĚNĚTE Č. 6 -->
-                <div style="flex: 1 1 200px; max-width: 250px; background: #fdfcfb; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <!-- Fotku si nahraj do složky a uprav název souboru -->
-                    <img src="images/vrhy/Vrh_A/Amir.jpeg" alt="Štěně 6" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
-                    <strong style="display: block; color: #68188a; font-size: 1.3em; -webkit-text-stroke: 1px black;">Amir</strong>
+                <div class="puppy-card">
+                    <img src="images/vrhy/Vrh_A/Amir.jpeg" alt="Amir" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <strong style="display: block; color: #68188a; font-size: 1.3em; -webkit-text-stroke: 1px black; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Amir</strong>
                     <span style="color: #555; font-size: 0.9em;">Pejsek (Kluk)</span>
                 </div>
-
-                <!-- Pokud je štěňat více, stačí zkopírovat celý tento blok "KARTIČKA ŠTĚNĚTE" a vložit ho sem -->
 
             </div>
         </div>
